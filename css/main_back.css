@@ -1,0 +1,1526 @@
+/* ------------------------------------------ */
+/*             TABLE OF CONTENTS
+/* ------------------------------------------ */
+/*   01 - Reset       */
+/*   02 - Global      */
+/*   03 - Typography  */
+/*   04 - Colors      */
+/*   05 - Animations  */
+/*   06 - Preload     */
+/*   07 - Icons       */
+/*   08 - layouts     */
+/*   09 - Buttons     */
+/*   10 - Navigation  */
+/*   11 - Components  */
+/*   12 - General  	  */
+/*   13 - Form        */
+/*   14 - Footer      */
+/*
+
+*/
+/* ==========================================================================
+ 1. RESET- resetting the defaults of html
+========================================================================== */
+
+@media print {
+  body {transform: scale(.5);}
+  /* table {page-break-inside: avoid;} */
+}
+
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+a {
+  margin: 0;
+  padding: 0;
+}
+/* ==========================================================================
+  2. GLOBAL COMPONENTS  - defines overall common styles of the template
+========================================================================== */
+body {
+  background-repeat: repeat;
+  background-color: #eee;
+}
+a {
+  color: #5b5efa;
+}
+a:hover,
+a:focus {
+  color: #2a2df8;
+}
+hr {
+  width: 65px;
+  margin: 0 0 0;
+  border-width: 4px;
+  border-color: #00a8ff;
+}
+sup {
+  top: 0;
+  right: 2px;
+}
+.main-container {
+  margin-top: 61px;
+  background-color: #fff;
+}
+.main-container .offset-lt {
+  padding-right: 30px;
+}
+.main-container .offset-rt {
+  padding-left: 30px;
+}
+.main-container .extra-offset {
+  padding-left: 45px;
+}
+.main-container .extra-offset-md {
+  padding-left: 65px;
+}
+.main-container .extra-offset-minus {
+  margin-left: -48px;
+}
+.main-container .extra-offset-lg {
+  padding-left: 80px;
+}
+@media all and (max-width: 1023px) {
+  .main-container .col-md-5 + .col-md-5 {
+    margin-top: 40px;
+  }
+  .main-container .offset-lt {
+    padding-right: 15px;
+  }
+  .main-container .offset-rt {
+    padding-left: 15px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  .main-container {
+    padding: 0 40px;
+  }
+}
+@media all and (max-width: 1069px) {
+  .main-container .extra-offset {
+    padding-left: 40px;
+  }
+  .main-container .extra-offset-md {
+    padding-left: 65px;
+  }
+  .main-container .extra-offset-minus {
+    margin-left: -48px;
+  }
+  .main-container .extra-offset-lg {
+    padding-left: 40px;
+  }
+}
+/*------------------------------------------*/
+/*	 Bootstrap Overrides
+/*------------------------------------------*/
+.icon {
+  margin-bottom: 10px;
+}
+.icon [class^="icon-"],
+.icon [class*=" icon-"] {
+  font-size: 45px;
+}
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1220px;
+  }
+  .container-fluid {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .container > .row {
+    margin: 0 -20px;
+  }
+}
+/*------------------------------------------*/
+/*	 Extras
+/*------------------------------------------*/
+::-moz-selection {
+  color: white;
+  text-shadow: none;
+  background: #222222;
+}
+::selection {
+  color: white;
+  text-shadow: none;
+  background: #222222;
+}
+img::selection {
+  color: white;
+  background: transparent;
+}
+img::-moz-selection {
+  color: white;
+  background: transparent;
+}
+body {
+  webkit-tap-highlight-color: #222222;
+}
+/* ==========================================================================
+  3. TYPOGRAPHY - styles that defines typography of the template
+========================================================================== */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #252525;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-variant-ligatures: common-ligatures;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h1 {
+  font-size: 18px;
+  line-height: 1em;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 0.75px;
+}
+h2 {
+  font-size: 19px;
+  line-height: 19px;
+  font-weight: 400;
+  margin-bottom: 13px;
+  letter-spacing: 1.2px;
+}
+h3 {
+  font-size: 31px;
+  line-height: 31px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+h4 {
+  font-size: 20px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+h5 {
+  font-size: 18px;
+  line-height: 1.8em;
+  font-weight: 600;
+}
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 30px 0 0px;
+  letter-spacing: 0.75px;
+  color: #424250;
+}
+p + p {
+  margin-top: 25px;
+}
+p.heading {
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 300;
+}
+p.subheading {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+p.superheading {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+p.subtitle {
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+}
+p.subtitle + p {
+  margin-top: 15px;
+}
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.styled-text {
+  font-weight: 300;
+  display: inline-block;
+  color: #1f1f29;
+}
+.styled-text a {
+  color: #1f1f29;
+}
+.styled-text:after {
+  content: '';
+  display: block;
+  border-bottom: 1px solid #5b5efa;
+  margin-top: 11px;
+}
+.text-underline {
+  text-decoration: underline;
+  color: #1f1f29;
+  opacity: 0.8;
+}
+.text-underline:hover,
+.text-underline:focus,
+.text-underline:active {
+  color: #1f1f29;
+  opacity: 0.5;
+}
+/*------------------------------------------*/
+/*	 classes to make text uppercase and lowercase
+/*------------------------------------------*/
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+/*------------------------------------------*/
+/*	 Font size of icons
+/*------------------------------------------*/
+.i-xl {
+  font-size: 5em;
+}
+.i-lg {
+  font-size: 4em;
+}
+.i-md {
+  font-size: 3.5em;
+}
+.i-sm {
+  font-size: 2em;
+}
+.i-xs {
+  font-size: 1.2em;
+}
+/* ==========================================================================
+   4. COLORS - colors that controls the major common elements of the template
+========================================================================== */
+body {
+  color: #fff;
+}
+h1,
+h2,
+h4,
+h5,
+h6 {
+  color: #1f1f29;
+}
+p {
+  color: #424250;
+}
+h3,
+.h3 {
+  color: #5b5efa;
+}
+/* ==========================================================================
+   5. ANIMATIONS
+========================================================================== */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);
+    /* IE 9 */
+    transform: rotate(0deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);
+    /* IE 9 */
+    transform: rotate(360deg);
+    /* Firefox 16+, IE 10+, Opera */
+  }
+}
+@-webkit-keyframes skills {
+  0% {
+    color: #eeeeee;
+  }
+  100% {
+    color: #00a8ff;
+  }
+}
+@keyframes skills {
+  0% {
+    color: #eeeeee;
+  }
+  100% {
+    color: #00a8ff;
+  }
+}
+/* ==========================================================================
+  8. PADDING AND MARGIN -- styles that controls the padding of major sections
+========================================================================== */
+/*------------------------------------------*/
+/*	 Spacing setup
+/*------------------------------------------*/
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+section:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+footer {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+footer:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section.padding-xxs {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+section.padding-xs {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+section.padding-sm {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+section.padding-md {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+section.padding-lg {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+section.padding-xlg {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.padding-0,
+.padding-0 {
+  padding: 0;
+}
+.padding-bottom-0 {
+  padding-bottom: 0 !important;
+}
+.padding-top-0 {
+  padding-bottom: 0 !important;
+}
+@media all and (max-width: 767px) {
+  section.padding-lg,
+  section.padding-md {
+    padding: 5em 0;
+  }
+  section.padding-xlg {
+    padding: 8em 0;
+  }
+}
+/*------------------------------------------*/
+/*	 Text Alignment
+/*------------------------------------------*/
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+/*------------------------------------------*/
+/*	 Positioning vertically center
+/*------------------------------------------*/
+.position-center {
+  position: relative;
+}
+@media all and (min-width: 767px) {
+  .position-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+  }
+}
+/* ==========================================================================
+   9. BUTTONS
+========================================================================== */
+.btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 15px;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+.btn-group {
+  margin-left: 40px;
+}
+.btn-group .btn:not(:last-child) {
+  margin-right: 15px;
+}
+.btn-group .btn {
+  border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+}
+.btn-xl {
+  padding: 20px 100px;
+}
+.btn-lg {
+  padding: 18px 70px;
+}
+.btn-md {
+  padding: 11px 0px;
+}
+.btn-sm {
+  padding: 8px 10px;
+}
+.btn-primary {
+  background: #5b5efa;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+  background: #1115f8;
+  color: #fff;
+}
+.btn-primary:hover:focus,
+.btn-primary:focus:focus,
+.btn-primary:active:focus,
+.btn-primary.active:focus {
+  outline: none;
+  box-shadow: none;
+}
+.btn-primary.inverse {
+  background: #fff;
+  color: #1f1f29;
+  border-bottom: 4px solid #00a8ff;
+}
+.btn-primary.inverse:hover,
+.btn-primary.inverse:focus,
+.btn-primary.inverse:active,
+.btn-primary.inverse.active {
+  background: #fff;
+  color: #a5a5bb;
+}
+.btn-transparent {
+  padding: 0;
+  background: transparent;
+  color: #1f1f29;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+}
+.btn-transparent svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+  fill: #00a8ff;
+}
+.btn-transparent:hover,
+.btn-transparent:focus,
+.btn-transparent:active,
+.btn-transparent:visited,
+.btn-transparent.active {
+  background: transparent;
+  color: #1f1f29;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.btn-transparent.inverse {
+  background: #fff;
+  color: #5b5efa;
+}
+.btn-transparent.inverse:hover,
+.btn-transparent.inverse:focus,
+.btn-transparent.inverse:active,
+.btn-transparent.inverse.active {
+  background: #fff;
+  color: #1115f8;
+}
+.btn-outline {
+  color: #5b5efa;
+  border: none;
+  box-shadow: inset 0 0 0 2px #5b5efa;
+  font-weight: 400;
+  font-size: 16px;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+  box-shadow: inset 0 0 0 2px #1115f8;
+}
+.btn-outline.inverse {
+  color: #fff;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.btn-outline.inverse:hover,
+.btn-outline.inverse:focus,
+.btn-outline.inverse:active,
+.btn-outline.inverse.active {
+  box-shadow: inset 0 0 0 2px #d9d9d9;
+}
+.btn-outline.grey {
+  color: #14abf4;
+  box-shadow: inset 0 0 0 1px #d8d7d7;
+}
+.btn-outline.grey:hover,
+.btn-outline.grey:focus,
+.btn-outline.grey:active,
+.btn-outline.grey.active {
+  box-shadow: inset 0 0 0 1px #b2b0b0;
+}
+p.head + .btn {
+  margin-top: 25px;
+}
+p + .btn {
+  margin-top: 25px;
+  margin-bottom: 55px;
+}
+/* ==========================================================================
+   11. COMPONENTS
+========================================================================== */
+/* ==========================================================================
+   SKILL
+========================================================================== */
+ul.skill {
+  margin: 25px 0;
+  list-style: none;
+  overflow-x: hidden;
+}
+ul.skill li {
+  max-width: 320px;
+  margin-top: 15px;
+  position: relative;
+}
+ul.skill li p {
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #1f1f29;
+}
+ul.skill li:before {
+  width: 100%;
+  height: 4px;
+  content: "";
+  display: block;
+  position: absolute;
+  background: #eeeeee;
+  bottom: 0;
+}
+ul.skill li .skill-bar {
+  width: 100%;
+  height: 4px;
+  background: #2e2828;
+  display: block;
+  position: relative;
+}
+ul.skill li .skill-bar .skill-tip {
+  position: absolute;
+  top: -27px;
+  right: -18px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 11px;
+  background-color: #00a8ff;
+  color: #fff;
+}
+ul.skill li .skill-bar .skill-tip:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #00a8ff;
+  border-bottom: 0;
+  margin-left: -6px;
+  margin-bottom: -6px;
+}
+ul.skill-dots {
+  margin: 25px 0;
+}
+ul.skill-dots li {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+}
+ul.skill-dots li .skill-title {
+  display: inline-block;
+  width: 185px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #1f1f29;
+}
+ul.skill-dots li .skill-progress {
+  display: inline-block;
+}
+ul.skill-dots li .skill-progress i {
+  margin-right: 10px;
+  vertical-align: inherit;
+  color: #eeeeee;
+}
+ul.skill-dots li .skill-progress i.active {
+  color: #00a8ff;
+}
+ul.skill-dots li .skill-progress i:before {
+  content: '\f111';
+}
+/* ==========================================================================
+   TIMELINE
+========================================================================== */
+.timeline-centered {
+  position: relative;
+  margin-top: 37px;
+}
+.timeline-centered:before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  display: block;
+  width: 4px;
+  border-left: dashed 1px #897f8a;
+}
+.timeline-centered .timeline-entry {
+  position: relative;
+  margin-bottom: 80px;
+  clear: both;
+}
+.timeline-centered .timeline-entry:last-child {
+  margin-bottom: 0px;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner {
+  position: relative;
+  padding-left: 23px;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+  position: absolute;
+  top: 5px;
+  left: -6px;
+  display: block;
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 9px;
+  color: #fff;
+  background-size: 100%;
+  background-color: #1f1f29;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+  position: relative;
+  background: #00a8ff;
+  padding: 0 13px;
+  margin-left: 10px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 26px;
+  letter-spacing: 0.75px;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -9px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13px 9px 13px 0;
+  border-color: transparent #00a8ff transparent transparent;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner .company {
+  margin: 0;
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #424250;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner p.designation {
+  margin-top: 0px;
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.timeline-centered .timeline-entry .timeline-entry-inner p.description {
+  margin-top: 13px;
+  word-break: break-all;
+}
+/* ==========================================================================
+   12. GENERAL STYLES
+========================================================================== */
+.background-image-wrapper {
+  width: 100%;
+  height: 100%;
+  background-size: contain !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  transition: opacity .3s linear;
+  -webkit-transition: opacity .3s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.background-image-wrapper img {
+  display: none;
+  max-height: 100%;
+  min-height: 100%;
+}
+/*------------------------------------------*/
+/*	 Overriding general padding for transparent navigation
+/*------------------------------------------*/
+@media (min-height: 500px) and (min-width: 767px) {
+  .home {
+    height: 100vh;
+    max-height: 800px;
+    padding-top: 81px;
+    padding-bottom: 0px;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .home {
+    height: auto;
+    padding: 120px 0;
+    padding-top: 163px;
+  }
+}
+/*------------------------------------------*/
+/*	 Modal WIndows
+/*------------------------------------------*/
+.login-form .col-md-6 {
+  padding: 35px;
+  display: table-cell;
+  float: none;
+}
+.login-form .close {
+  opacity: 0.9;
+  font-size: 25px;
+  font-weight: 400;
+  color: #5b5efa;
+}
+/*--login--*/
+@media (max-width: 767px) {
+  .login-form .col-md-6 {
+    display: block;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .modal-dialog .modal-body {
+    padding: 0px;
+  }
+  .modal-dialog .modal-body:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .modal-dialog .modal-content {
+    border-radius: 0px;
+  }
+  .modal-dialog form > div[class*='col-']:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .modal-dialog .login-form .col-md-6 {
+    padding: 20px;
+  }
+}
+.login-form .col-md-6 {
+  vertical-align: middle;
+}
+.login-form .col-md-6 .checkboxlabel {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: none;
+}
+.login-form .col-md-6 .checkboxlabel:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  background: #fff;
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  -webkit-border-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+  border-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+  border-image-slice: 1;
+  border-radius: 30px !important;
+  color: #000;
+}
+.login-form .col-md-6 input[type=checkbox] {
+  display: none;
+}
+.login-form .col-md-6 input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  line-height: 11px;
+}
+.login-text {
+  height: 100%;
+}
+.login-text h3 {
+  font-weight: 300;
+  margin-bottom: 0px;
+}
+.follows {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-image: url(../img/wave.png);
+  background-size: 100%;
+  height: 165px;
+}
+.follows p {
+  margin-top: 95px;
+  line-height: 0;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 11px;
+}
+.follows .list-inline li a {
+  color: #fff;
+}
+.follows .list-inline li a:hover {
+  color: #5b5efa;
+}
+/*------------------------------------------*/
+/*   Scrollable Tabs
+/*------------------------------------------*/
+.scrtabs-tab-container .nav {
+  padding-bottom: 0px;
+}
+.scrtabs-tab-container .nav-tabs li {
+  /* padding-right: 80px;
+        &:last-child{
+            padding-right: 0;
+        }*/
+}
+/*------------------------------------------*/
+/*   WHY CHOOSE BLOCKS
+/*------------------------------------------*/
+@media all and (max-width: 320px) {
+  #whychooseus .col-xs-6 {
+    width: 100%;
+  }
+}
+/* ==========================================================================
+   13. FORM ELEMENTS - styles that control the form elements of the template
+========================================================================== */
+label {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 14px;
+  color: #1f1f29;
+}
+input[type=text],
+input[type=password],
+input[type=number],
+textarea,
+select {
+  width: 100%;
+  -webkit-appearance: none;
+  background: #fcfcfc;
+  color: #5b5efa;
+  padding: 0.5em 1em 0.5em 0;
+  border: 1px solid #ebebeb;
+  line-height: 26px;
+  min-height: 42px;
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+textarea:focus,
+select:focus,
+input[type=text]:active,
+input[type=password]:active,
+input[type=number]:active,
+textarea:active,
+select:active {
+  outline: none;
+}
+input[type=text].minimal,
+input[type=password].minimal,
+input[type=number].minimal,
+textarea.minimal,
+select.minimal {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  padding: 0.3em 1em 0.5em 0;
+}
+form > div[class*='col-'] {
+  padding: 0;
+}
+::-webkit-input-placeholder {
+  font-size: 12px;
+  color: rgba(31, 31, 41, 0.5);
+}
+::-moz-placeholder {
+  font-size: 12px;
+  color: rgba(31, 31, 41, 0.5);
+}
+:-ms-input-placeholder {
+  font-size: 12px;
+  color: rgba(31, 31, 41, 0.5);
+}
+:-moz-placeholder {
+  font-size: 12px;
+  color: rgba(31, 31, 41, 0.5);
+}
+/* ==========================================================================
+   14. FOOTER AND HEADER- styles that controls the footer part of the template
+========================================================================== */
+header {
+  position: relative;
+  height: 250px;
+  padding: 60px 0 0 0px;
+  background-position: right top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+@media all and (max-width: 1023px) {
+  header {
+    background-size: cover;
+  }
+}
+header > .col-md-12 {
+  height: 100%;
+}
+header .resume-title {
+  /* position: absolute; */
+  /* bottom: 72px; */
+  width: calc(100% - 150px);
+  z-index: 2;
+}
+header .resume-title h2 {
+  font-size: 70px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1f1f29;
+  line-height: 0.69em;
+  letter-spacing: 0.14em;
+}
+header .resume-designation {
+  width: 100%;
+  margin-top: 4px;
+  display: inline-block;
+}
+header .resume-designation span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1f1f29;
+  letter-spacing: 0.5em;
+  vertical-align: middle;
+}
+header .resume-designation span.border {
+  width: 100%;
+  max-width: 290px;
+  height: 4px;
+  margin-right: 25px;
+  background-color: #00a8ff;
+}
+@media all and (max-width: 480px) {
+  header .col-md-12.extra-offset-md {
+    padding: 0 15px;
+  }
+  header .col-md-12.extra-offset-md .btn.btn-transparent {
+    display: block;
+    margin: 0 auto;
+  }
+}
+@media all and (max-width: 479px) {
+  header .resume-title h2 {
+    font-size: 45px;
+  }
+}
+footer {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  color: #ececec;
+}
+footer a {
+  color: #fff21e;
+}
+footer a:hover {
+  text-decoration: none;
+  color: #fff21e;
+}
+footer .col-md-4 {
+  margin-bottom: 50px;
+}
+footer p {
+  font-size: 13px;
+}
+footer p.superhead {
+  text-transform: uppercase;
+}
+footer p.contact {
+  padding-left: 20px;
+  text-indent: -10px;
+}
+footer p.contact i {
+  margin-right: 10px;
+  color: #c8c8c9;
+}
+footer hr.large {
+  width: 100%;
+  max-width: 100%;
+  margin: 0.5em auto;
+  border-width: 2px;
+  border-color: #cecece;
+}
+footer .copyright {
+  padding: 20px 0;
+  font-size: 12px;
+  color: #afafaf;
+}
+footer .footer-social-links {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+footer .footer-social-links li {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 50% 50%;
+  margin: 10px 10px 10px 0;
+  list-style: none;
+  display: inline-block;
+}
+footer .footer-social-links li i {
+  width: 100%;
+  text-align: center;
+  line-height: inherit;
+  display: inline-block;
+}
+footer .footer-social-links li.facebook {
+  background-color: #225b99;
+}
+footer .footer-social-links li.twitter {
+  background-color: #00adf2;
+}
+footer .footer-social-links li.google-plus {
+  background-color: #dc4d2d;
+}
+footer .list-inline li {
+  display: block;
+}
+footer .list-inline a {
+  color: #1f1f29;
+}
+footer .list-inline a:hover {
+  color: #5b5efa;
+  text-decoration: none;
+  border: none;
+}
+@media all and (max-width: 767px) {
+  footer [class^="col-"] {
+    margin-bottom: 25px;
+  }
+}
+@media all and (min-width: 768px) {
+  footer .col-md-4 {
+    width: 33%;
+    display: table-cell;
+  }
+}
+@media all and (max-width: 480px) {
+  footer .list-inline a {
+    border-right: 1px solid #b9b9b9;
+    padding-right: 10px;
+  }
+  footer .list-inline a:hover {
+    border-right: 1px solid #b9b9b9;
+  }
+  footer .list-inline li {
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+}
+
+.skill-bar-1 {
+  width: 1% !important;
+}
+.skill-bar-2 {
+  width: 2% !important;
+}
+.skill-bar-3 {
+  width: 3% !important;
+}
+.skill-bar-4 {
+  width: 4% !important;
+}
+.skill-bar-5 {
+  width: 5% !important;
+}
+.skill-bar-6 {
+  width: 6% !important;
+}
+.skill-bar-7 {
+  width: 7% !important;
+}
+.skill-bar-8 {
+  width: 8% !important;
+}
+.skill-bar-9 {
+  width: 9% !important;
+}
+.skill-bar-10 {
+  width: 10% !important;
+}
+.skill-bar-11 {
+  width: 11% !important;
+}
+.skill-bar-12 {
+  width: 12% !important;
+}
+.skill-bar-13 {
+  width: 13% !important;
+}
+.skill-bar-14 {
+  width: 14% !important;
+}
+.skill-bar-15 {
+  width: 15% !important;
+}
+.skill-bar-16 {
+  width: 16% !important;
+}
+.skill-bar-17 {
+  width: 17% !important;
+}
+.skill-bar-18 {
+  width: 18% !important;
+}
+.skill-bar-19 {
+  width: 19% !important;
+}
+.skill-bar-20 {
+  width: 20% !important;
+}
+.skill-bar-21 {
+  width: 21% !important;
+}
+.skill-bar-22 {
+  width: 22% !important;
+}
+.skill-bar-23 {
+  width: 23% !important;
+}
+.skill-bar-24 {
+  width: 24% !important;
+}
+.skill-bar-25 {
+  width: 25% !important;
+}
+.skill-bar-26 {
+  width: 26% !important;
+}
+.skill-bar-27 {
+  width: 27% !important;
+}
+.skill-bar-28 {
+  width: 28% !important;
+}
+.skill-bar-29 {
+  width: 29% !important;
+}
+.skill-bar-30 {
+  width: 30% !important;
+}
+.skill-bar-31 {
+  width: 31% !important;
+}
+.skill-bar-32 {
+  width: 32% !important;
+}
+.skill-bar-33 {
+  width: 33% !important;
+}
+.skill-bar-34 {
+  width: 34% !important;
+}
+.skill-bar-35 {
+  width: 35% !important;
+}
+.skill-bar-36 {
+  width: 36% !important;
+}
+.skill-bar-37 {
+  width: 37% !important;
+}
+.skill-bar-38 {
+  width: 38% !important;
+}
+.skill-bar-39 {
+  width: 39% !important;
+}
+.skill-bar-40 {
+  width: 40% !important;
+}
+.skill-bar-41 {
+  width: 41% !important;
+}
+.skill-bar-42 {
+  width: 42% !important;
+}
+.skill-bar-43 {
+  width: 43% !important;
+}
+.skill-bar-44 {
+  width: 44% !important;
+}
+.skill-bar-45 {
+  width: 45% !important;
+}
+.skill-bar-46 {
+  width: 46% !important;
+}
+.skill-bar-47 {
+  width: 47% !important;
+}
+.skill-bar-48 {
+  width: 48% !important;
+}
+.skill-bar-49 {
+  width: 49% !important;
+}
+.skill-bar-50 {
+  width: 50% !important;
+}
+.skill-bar-51 {
+  width: 51% !important;
+}
+.skill-bar-52 {
+  width: 52% !important;
+}
+.skill-bar-53 {
+  width: 53% !important;
+}
+.skill-bar-54 {
+  width: 54% !important;
+}
+.skill-bar-55 {
+  width: 55% !important;
+}
+.skill-bar-56 {
+  width: 56% !important;
+}
+.skill-bar-57 {
+  width: 57% !important;
+}
+.skill-bar-58 {
+  width: 58% !important;
+}
+.skill-bar-59 {
+  width: 59% !important;
+}
+.skill-bar-60 {
+  width: 60% !important;
+}
+.skill-bar-61 {
+  width: 61% !important;
+}
+.skill-bar-62 {
+  width: 62% !important;
+}
+.skill-bar-63 {
+  width: 63% !important;
+}
+.skill-bar-64 {
+  width: 64% !important;
+}
+.skill-bar-65 {
+  width: 65% !important;
+}
+.skill-bar-66 {
+  width: 66% !important;
+}
+.skill-bar-67 {
+  width: 67% !important;
+}
+.skill-bar-68 {
+  width: 68% !important;
+}
+.skill-bar-69 {
+  width: 69% !important;
+}
+.skill-bar-70 {
+  width: 70% !important;
+}
+.skill-bar-71 {
+  width: 71% !important;
+}
+.skill-bar-72 {
+  width: 72% !important;
+}
+.skill-bar-73 {
+  width: 73% !important;
+}
+.skill-bar-74 {
+  width: 74% !important;
+}
+.skill-bar-75 {
+  width: 75% !important;
+}
+.skill-bar-76 {
+  width: 76% !important;
+}
+.skill-bar-77 {
+  width: 77% !important;
+}
+.skill-bar-78 {
+  width: 78% !important;
+}
+.skill-bar-79 {
+  width: 79% !important;
+}
+.skill-bar-80 {
+  width: 80% !important;
+}
+.skill-bar-81 {
+  width: 81% !important;
+}
+.skill-bar-82 {
+  width: 82% !important;
+}
+.skill-bar-83 {
+  width: 83% !important;
+}
+.skill-bar-84 {
+  width: 84% !important;
+}
+.skill-bar-85 {
+  width: 85% !important;
+}
+.skill-bar-86 {
+  width: 86% !important;
+}
+.skill-bar-87 {
+  width: 87% !important;
+}
+.skill-bar-88 {
+  width: 88% !important;
+}
+.skill-bar-89 {
+  width: 89% !important;
+}
+.skill-bar-90 {
+  width: 90% !important;
+}
+.skill-bar-91 {
+  width: 91% !important;
+}
+.skill-bar-92 {
+  width: 92% !important;
+}
+.skill-bar-93 {
+  width: 93% !important;
+}
+.skill-bar-94 {
+  width: 94% !important;
+}
+.skill-bar-95 {
+  width: 95% !important;
+}
+.skill-bar-96 {
+  width: 96% !important;
+}
+.skill-bar-97 {
+  width: 97% !important;
+}
+.skill-bar-98 {
+  width: 98% !important;
+}
+.skill-bar-99 {
+  width: 99% !important;
+}
+.skill-bar-100 {
+  width: 100% !important;
+}
